@@ -275,7 +275,7 @@ public class CLI {
     }
 
     private static int plainHttpConnection(String url, List<String> args, CLIConnectionFactory factory) throws IOException, InterruptedException {
-        LOGGER.log(FINE, "Trying to connect to {0} via plain protocol over HTTP", url);
+        LOGGER.log(FINER, "Trying to connect to {0} via plain protocol over HTTP", url);
         FullDuplexHttpStream streams = new FullDuplexHttpStream(new URL(url), "cli?remoting=false", factory.authorization);
         class ClientSideImpl extends PlainCLIProtocol.ClientSide {
             boolean complete;
@@ -337,7 +337,7 @@ public class CLI {
                     try {
                         Thread.sleep(10_000);
                         while (!connection.complete) {
-                            LOGGER.fine("sending ping");
+                            LOGGER.finest("sending ping");
                             connection.sendEncoding(Charset.defaultCharset().name()); // no-op at this point
                             Thread.sleep(10_000);
                         }

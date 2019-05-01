@@ -2430,7 +2430,7 @@ public final class FilePath implements SerializableOnlyOverRemoting {
                         if (exceptionEncountered) {
                             Files.copy(fileToPath(f), targetPath, StandardCopyOption.REPLACE_EXISTING);
                             if (!logMessageShown) {
-                                LOGGER.log(Level.INFO, 
+                                LOGGER.log(Level.FINEST, 
                                     "JENKINS-52325: Jenkins failed to retain attributes when copying to {0}, so proceeding without attributes.", 
                                     dest.getAbsolutePath());
                                 logMessageShown = true;
