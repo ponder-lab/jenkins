@@ -337,7 +337,7 @@ public class CLI {
                     try {
                         Thread.sleep(10_000);
                         while (!connection.complete) {
-                            LOGGER.fine("sending ping");
+                            LOGGER.finest("sending ping");
                             connection.sendEncoding(Charset.defaultCharset().name()); // no-op at this point
                             Thread.sleep(10_000);
                         }

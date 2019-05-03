@@ -3302,7 +3302,7 @@ public final class FilePath implements SerializableOnlyOverRemoting {
                 try{
                     Path child = currentFileAbsolutePath.toRealPath();
                     if (!child.startsWith(parentRealPath)) {
-                        LOGGER.log(Level.FINE, "Child [{0}] does not start with parent [{1}] => not descendant", new Object[]{ child, parentRealPath });
+                        LOGGER.log(Level.FINEST, "Child [{0}] does not start with parent [{1}] => not descendant", new Object[]{ child, parentRealPath });
                         return false;
                     }
                 } catch (NoSuchFileException e) {

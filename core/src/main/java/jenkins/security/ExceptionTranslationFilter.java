@@ -116,7 +116,7 @@ public class ExceptionTranslationFilter implements Filter, InitializingBean {
 		try {
 			chain.doFilter(request, response);
 
-			LOGGER.finer("Chain processed normally");
+			LOGGER.finest("Chain processed normally");
 		}
 		catch (AuthenticationException | AccessDeniedException ex) {
 			handleException(request, response, chain, ex);
@@ -193,7 +193,7 @@ public class ExceptionTranslationFilter implements Filter, InitializingBean {
 
 		SavedRequest savedRequest = new SavedRequest(httpRequest, portResolver);
 
-		LOGGER.finer("Authentication entry point being called; SavedRequest added to Session: " + savedRequest);
+		LOGGER.finest("Authentication entry point being called; SavedRequest added to Session: " + savedRequest);
 
 		if (createSessionAllowed) {
 			// Store the HTTP request itself. Used by AbstractProcessingFilter
